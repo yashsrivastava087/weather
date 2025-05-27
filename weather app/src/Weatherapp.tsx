@@ -10,14 +10,20 @@ const Weatherapp = () => {
   const handleSearch = (query: string) => {
     setsearchquery(query);
   };
-  
+
+  const clearSearch = () => {
+    setsearchquery('');
+  };
 
   return (
     <div>
       {!isloaded && <Loadingscreen oncomplete={() => setisloaded(true)} />}
-      <Navbar onSearch={handleSearch} />
+      
+   
+      <Navbar onSearch={handleSearch} clearSearch={clearSearch} />
+      
       <div className="mt-8 p-4">
-        <Main searchQuery={searchquery} searchMode="Location" />
+        <Main searchQuery={searchquery} searchMode="Location" clearSearch={clearSearch} />
       </div>
     </div>
   );
