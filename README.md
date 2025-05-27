@@ -4,7 +4,7 @@ A modern and responsive weather application built with React, providing real-tim
 
 [![WeatherX](https://weather-seven-bay.vercel.app/)
 
-!-- Replace with actual screenshot -->
+
 
 ## Features ✨
 - Real-time weather data for any location
