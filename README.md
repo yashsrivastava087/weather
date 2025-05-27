@@ -2,7 +2,7 @@
 
 A modern and responsive weather application built with React, providing real-time weather updates and forecasts. Features a sleek UI with smooth animations and scrolling headlines.
 
-[![WeatherX]([https://img.shields.io/badge/Live%20Demo-Vercel-%23000000?style=for-the-badge&logo=vercel)](https://weather-app-yashsrivastava087.vercel.app/](https://weather-seven-bay.vercel.app/))
+[![WeatherX](https://weather-seven-bay.vercel.app/)
 
 !-- Replace with actual screenshot -->
 
