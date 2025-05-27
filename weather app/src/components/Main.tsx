@@ -65,11 +65,14 @@ const Main = ({ searchQuery, searchMode, clearSearch }: {
       try {
         setIsLoading(true);
         setApiError('');
+        
 
         if (searchQuery) {
           const API_ENDPOINT = `https://api.openweathermap.org/data/2.5/weather?q=${searchQuery}&apikey=${import.meta.env.VITE_API_KEY}&units=metric`;
           const apiResponse = await fetch(API_ENDPOINT);
-
+           if (!apiResponse.ok) {
+            throw new Error('City not found');
+          }
           const responsedata = await apiResponse.json();
           setWeatherInfo(responsedata);
           setPredefinedWeather([]);
@@ -92,7 +95,8 @@ const Main = ({ searchQuery, searchMode, clearSearch }: {
           setWeatherInfo(null);
         }
       } catch (err) {
-        console.log(err)
+        setApiError(err instanceof Error ? err.message : 'Failed to fetch weather data');
+        setWeatherInfo(null);
       } finally {
         setIsLoading(false);
       }
@@ -117,7 +121,7 @@ const Main = ({ searchQuery, searchMode, clearSearch }: {
 
   return (
     <>
-    <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-md overflow-hidden px-0 py-3 w-full mt-10">
+    <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-md overflow-hidden px-0 py-2 w-full mt-10">
       {searchQuery ? (
         weatherInfo && (
           <div className="p-8 relative">
@@ -128,7 +132,7 @@ const Main = ({ searchQuery, searchMode, clearSearch }: {
               ← Back to all cities
             </button>
 
-            <section className="flex items-center justify-between py-7 px-1 mt-4">
+            <section className="flex items-center justify-between py-4 px-1 mt-4">
               <div>
                 <h2 className="text-2xl font-bold text-gray-800">
                   {weatherInfo.name}
