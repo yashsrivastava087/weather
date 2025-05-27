@@ -1,17 +1,21 @@
+// Navbar.tsx
 import { useState } from 'react';
 import { Button } from "@/components/ui/button"
-const Navbar = ({ onSearch }: { onSearch: (query: string) => void }) => {
-  const [searchQuery, setSearchQuery] = useState('');
+
+const Navbar = ({ onSearch, clearSearch }: { 
+  onSearch: (query: string) => void;
+  clearSearch: () => void;
+}) => {
+  const [localQuery, setLocalQuery] = useState('');
 
   const handleSearch = () => {
-    if (searchQuery.trim()) {
-      onSearch(searchQuery.trim());
-      setSearchQuery('');
+    if (localQuery.trim()) {
+      onSearch(localQuery.trim());
     }
   };
 
   return (
-    <div className=' px-9 bg-gray-800 w-full rounded-2xl mb-13'>
+    <div className='px-9 bg-gray-800 w-full rounded-2xl mb-4'>
       <div className='max-w-7xl mx-auto h-16 flex items-center justify-between'>
         <h1 className='text-2xl font-bold text-white'>
           Weather<span className='text-[#a3bc00]'>X</span>
@@ -23,8 +27,8 @@ const Navbar = ({ onSearch }: { onSearch: (query: string) => void }) => {
               type='text'
               placeholder='Enter location'
               className='px-4 py-2 w-64 focus:outline-none'
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              value={localQuery}
+              onChange={(e) => setLocalQuery(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
             />
             <Button
@@ -34,8 +38,14 @@ const Navbar = ({ onSearch }: { onSearch: (query: string) => void }) => {
             >
               Search
             </Button>
-
           </div>
+          <Button 
+            onClick={clearSearch}
+            variant="ghost"
+            className="text-white hover:bg-gray-700"
+          >
+            Show All Cities
+          </Button>
         </div>
       </div>
     </div>
