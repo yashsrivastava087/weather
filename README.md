@@ -4,7 +4,7 @@ A modern and responsive weather application built with React, providing real-tim
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-%23000000?style=for-the-badge&logo=vercel)](https://weather-app-yashsrivastava087.vercel.app/)
 
-![Preview](https://via.placeholder.com/800x500.png?text=Weather+App+Preview) <!-- Replace with actual screenshot -->
+![Preview]([https://via.placeholder.com/800x500.png?text=Weather+App+Preview](https://www.linkedin.com/safety/go?url=https%3A%2F%2Fweather-seven-bay.vercel.app%2F&trk=flagship-messaging-web&messageThreadUrn=urn%3Ali%3AmessagingThread%3A2-OTc4YWM1MGMtOTA1Mi00OWMyLTk5MjQtZjhlNWMzMTJiMWVkXzEwMA%3D%3D&lipi=urn%3Ali%3Apage%3Ad_flagship3_messaging_conversation_detail%3BcwgFEMnDSoG2kKXRfZjImQ%3D%3D)) <!-- Replace with actual screenshot -->
 
 ## Features ✨
 - Real-time weather data for any location
